@@ -21,6 +21,8 @@ import javax.validation.constraints.*;
 public class Person {
 
     @Id
+    @NotBlank(message = "Name is mandatory")
+    @Size(min = 3, max = 20, message = "id must be between 3 and 40 characters")
     private String id;
 
     @Size(min = 3, max = 20, message = "Name must be between 3 and 20 characters")
@@ -40,7 +42,6 @@ public class Person {
     @DecimalMax(value = "1.6", message = "Height should not be greater than 1.6")
     private Double height;
 
-    @NotNull(message = "Weight is mandatory")
     @DecimalMin(value = "0", message = "Height should not be less than 0")
     @DecimalMax(value = "73.5", message = "Height should not be greater than 73.5")
     private Double weight;
