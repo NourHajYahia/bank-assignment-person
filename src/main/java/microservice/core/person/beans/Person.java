@@ -21,7 +21,7 @@ import javax.validation.constraints.*;
 public class Person {
 
     @Id
-    @NotBlank(message = "Name is mandatory")
+    @NotBlank(message = "Id is mandatory")
     @Size(min = 3, max = 20, message = "id must be between 3 and 40 characters")
     private String id;
 
